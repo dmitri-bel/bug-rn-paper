@@ -1,5 +1,6 @@
 import { Stack, Link } from 'expo-router';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 export default function Page() {
   return (
@@ -9,6 +10,8 @@ export default function Page() {
         <View>
           <Text className={styles.title}>Hello World</Text>
           <Text className={styles.subtitle}>This is the first page of your app.</Text>
+          {/* the following line breaks the app */}
+          <TextInput onChangeText={(text) => console.log(text)} />
         </View>
         <Link href={{ pathname: '/details', params: { name: 'Dan' } }} asChild>
           <TouchableOpacity className={styles.button}>
